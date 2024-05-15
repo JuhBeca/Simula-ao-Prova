@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FOLHA DE PAGAMENTO-FUNCIONARIOS</title>
+</head>
+<body>
+
+     <div id="app">
+        <div id="divtitulo">
+           <h2>FOLHA DE PAGAMENTO</h2>
+        </div>
+        <div>
+           <div class="lblTexto">Nome</div>
+           <input id="inputNome"/>
+           <div class="lblTexto">Salario</div>
+           <input id="inputSalario"/>
+            <button id="btnAdicionar">adicionar</button>
+
+        </div>
+        <div id="divlista">
+            <label id="lista">ID. Nome | Salario</label>
+        </div>
+        <div id="divTotal">
+            <label id="lblTotal">Total: R$ 0.000,00</label>
+        </div>
+    </div>
+    <script>
+        var numerofuncionario = 1;
+        var totalFolha = 0;
+        function adicionarFuncionario() {
+            const vNome= document.getElementById("inputNome").value;
+            const vSalario= document.getElementById("inputSalario").value;
+           
+            if (vSalario!="" && !Number.isNaN(number.parseFloat(vSalario))){
+                document.getElementById("lista").innerHTML += "<br/>" + numerofuncionario+ "." + vNome+ "|" + "R$" +vSalario;
+                numerofuncionario++;
+                totalFolha= totalFolha +parseFloat(vSalario);
+                document.getElementById("lblTotal").innerHTML = "Total: R$" +totalFolha;
+            }
+            else{
+                return;
+            }
+        
+        }
+    </script>
+    
+</body>
+</html>
